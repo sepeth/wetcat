@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfm1f7kl8r47s"]
+[gd_scene load_steps=2 format=3 uid="uid://r2l487p53u5w"]
 
-[ext_resource type="Texture2D" uid="uid://ctxvs2m2hds6r" path="res://Nodes/beachtest.png" id="1_p80ct"]
+[ext_resource type="Texture2D" uid="uid://ctxvs2m2hds6r" path="res://Images/beachtest.png" id="1_1d7gm"]
 
 [node name="Beach" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_p80ct")
+texture = ExtResource("1_1d7gm")
