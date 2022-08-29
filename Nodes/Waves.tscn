@@ -1,52 +1,66 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvx30pfjovi3d"]
+[gd_scene load_steps=8 format=3 uid="uid://cvx30pfjovi3d"]
 
 [ext_resource type="Texture2D" uid="uid://hr388olasv12" path="res://Images/wave1.png" id="1_imcsx"]
 [ext_resource type="Texture2D" uid="uid://cqikbh7ng2anu" path="res://Images/wave2.png" id="2_jtnxo"]
 [ext_resource type="Texture2D" uid="uid://dln7g7bev0ros" path="res://Images/wave3.png" id="3_5xv6a"]
 [ext_resource type="Texture2D" uid="uid://bx17xmhm8c2kt" path="res://Images/wave4.png" id="4_sh31a"]
 [ext_resource type="Texture2D" uid="uid://bcatrc76w873s" path="res://Images/wave5.png" id="5_ye8mq"]
-[ext_resource type="Texture2D" uid="uid://dx7klm4dmu60l" path="res://Images/wave6.png" id="6_ewmfv"]
+[ext_resource type="Texture2D" uid="uid://pr2d4u4txknk" path="res://Images/wave7.png" id="6_3drm1"]
+[ext_resource type="Script" path="res://Scripts/parallax_scroller.gd" id="7_mc4id"]
 
 [node name="Waves" type="Node2D"]
 
 [node name="Wave1" type="Sprite2D" parent="."]
-texture = ExtResource("1_imcsx")
-
-[node name="Wave1" type="Sprite2D" parent="Wave1"]
+visible = false
 position = Vector2(1900, 0)
 texture = ExtResource("1_imcsx")
 
-[node name="Wave2" type="Sprite2D" parent="."]
-texture = ExtResource("2_jtnxo")
-
-[node name="Wave2" type="Sprite2D" parent="Wave2"]
+[node name="Wave7" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1900, 0)
 texture = ExtResource("2_jtnxo")
 
-[node name="Wave3" type="Sprite2D" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("7_mc4id")
+
+[node name="ParallaxWave1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1900, 0)
+
+[node name="Wave1" type="Sprite2D" parent="ParallaxBackground/ParallaxWave1"]
+texture = ExtResource("1_imcsx")
+
+[node name="ParallaxWave2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1900, 0)
+
+[node name="Wave2" type="Sprite2D" parent="ParallaxBackground/ParallaxWave2"]
+texture = ExtResource("2_jtnxo")
+
+[node name="ParallaxWave3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1900, 0)
+
+[node name="Wave3" type="Sprite2D" parent="ParallaxBackground/ParallaxWave3"]
 texture = ExtResource("3_5xv6a")
 
-[node name="Wave3" type="Sprite2D" parent="Wave3"]
-position = Vector2(1900, 0)
-texture = ExtResource("3_5xv6a")
+[node name="ParallaxWave4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1900, 0)
 
-[node name="Wave4" type="Sprite2D" parent="."]
+[node name="Wave4" type="Sprite2D" parent="ParallaxBackground/ParallaxWave4"]
 texture = ExtResource("4_sh31a")
 
-[node name="Wave4" type="Sprite2D" parent="Wave4"]
-position = Vector2(1900, 0)
-texture = ExtResource("4_sh31a")
+[node name="ParallaxWave5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1900, 0)
 
-[node name="Wave5" type="Sprite2D" parent="."]
+[node name="Wave5" type="Sprite2D" parent="ParallaxBackground/ParallaxWave5"]
 texture = ExtResource("5_ye8mq")
 
-[node name="Wave5" type="Sprite2D" parent="Wave5"]
-position = Vector2(1900, 0)
-texture = ExtResource("5_ye8mq")
+[node name="ParallaxWave6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1900, 0)
 
-[node name="Wave6" type="Sprite2D" parent="."]
-texture = ExtResource("6_ewmfv")
-
-[node name="Wave6" type="Sprite2D" parent="Wave6"]
-position = Vector2(1900, 0)
-texture = ExtResource("6_ewmfv")
+[node name="Wave6" type="Sprite2D" parent="ParallaxBackground/ParallaxWave6"]
+texture = ExtResource("6_3drm1")
