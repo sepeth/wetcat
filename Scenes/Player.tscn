@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh0u2mqtxrsw7"]
+[gd_scene load_steps=3 format=3 uid="uid://bh0u2mqtxrsw7"]
 
 [ext_resource type="Texture2D" uid="uid://bsj25wy4hvg04" path="res://icon.png" id="1_s7gdo"]
+[ext_resource type="Material" uid="uid://b87six5kf5xay" path="res://Scenes/PlayerShaderMaterial.tres" id="1_yqpbr"]
 
 [node name="Player" type="CharacterBody2D"]
 
@@ -9,4 +10,5 @@
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_yqpbr")
 texture = ExtResource("1_s7gdo")
