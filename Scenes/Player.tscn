@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://b87six5kf5xay" path="res://Scenes/PlayerShaderMaterial.tres" id="1_yqpbr"]
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
