@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://u1ftfedehlue"]
+
+[ext_resource type="Texture2D" uid="uid://dehu0wvcqqasc" path="res://Images/sky.png" id="2_dolec"]
+[ext_resource type="Script" path="res://Scripts/parallax_scroller.gd" id="7_mc4id"]
+
+[node name="ParallaxSky" type="ParallaxBackground"]
+offset = Vector2(800, 0)
+transform = Transform2D(1, 0, 0, 1, 800, 0)
+scroll_ignore_camera_zoom = true
+script = ExtResource("7_mc4id")
+
+[node name="ParallaxSkyLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(2000, 0)
+
+[node name="Sky" type="Sprite2D" parent="ParallaxSkyLayer"]
+scale = Vector2(1, 2.16)
+texture = ExtResource("2_dolec")

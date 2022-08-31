@@ -1,33 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmai1km5sou06"]
+[gd_scene load_steps=6 format=3 uid="uid://dmai1km5sou06"]
 
+[ext_resource type="PackedScene" uid="uid://bysd2roibfb0v" path="res://Nodes/WavesSmall.tscn" id="1_4eikf"]
 [ext_resource type="PackedScene" uid="uid://cvx30pfjovi3d" path="res://Nodes/Waves.tscn" id="1_xhklj"]
 [ext_resource type="PackedScene" uid="uid://r2l487p53u5w" path="res://Nodes/Beach.tscn" id="2_27243"]
 [ext_resource type="PackedScene" uid="uid://d053qmf0qdfb6" path="res://Nodes/Water.tscn" id="3_4ftcm"]
+[ext_resource type="PackedScene" uid="uid://u1ftfedehlue" path="res://Nodes/Sky.tscn" id="4_wmke3"]
 
 [node name="Environment" type="Node2D"]
 
 [node name="BackgroundParent" type="Node2D" parent="."]
 
-[node name="Waves" parent="BackgroundParent" instance=ExtResource("1_xhklj")]
+[node name="WavesSmall" parent="BackgroundParent" instance=ExtResource("1_4eikf")]
 layer = -1
 offset = Vector2(950, -400)
-scale = Vector2(1.2, 1.2)
-transform = Transform2D(1.2, 0, 0, 1.2, 950, -400)
+transform = Transform2D(1, 0, 0, 1, 950, -400)
 
-[node name="Waves2" parent="BackgroundParent" instance=ExtResource("1_xhklj")]
+[node name="Waves" parent="BackgroundParent" instance=ExtResource("1_xhklj")]
 layer = -1
-offset = Vector2(950, 400)
-scale = Vector2(1.2, 1.2)
-transform = Transform2D(1.2, 0, 0, 1.2, 950, 400)
+visible = false
+offset = Vector2(700, -300)
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 700, -300)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="BackgroundParent"]
 layer = -5
 
 [node name="Beach" parent="BackgroundParent/CanvasLayer" instance=ExtResource("2_27243")]
-position = Vector2(-896, 403)
-scale = Vector2(2.91175, 8.16702)
+position = Vector2(948, 183)
+scale = Vector2(1.5, 1.5)
 z_index = -2
+
+[node name="Waves2" parent="BackgroundParent" instance=ExtResource("1_xhklj")]
+layer = -6
+offset = Vector2(700, 500)
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 700, 500)
 
 [node name="ParallaxBackground" parent="BackgroundParent" instance=ExtResource("3_4ftcm")]
 offset = Vector2(800, 400)
 transform = Transform2D(1, 0, 0, 1, 800, 400)
+
+[node name="ParallaxSky" parent="BackgroundParent" instance=ExtResource("4_wmke3")]
+offset = Vector2(800, -150)
+transform = Transform2D(1, 0, 0, 1, 800, -150)
