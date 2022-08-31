@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://fg1mmw4ng6tl"]
+
+[ext_resource type="Texture2D" uid="uid://bsv3jwv85sja2" path="res://Images/Arrow2.png" id="2_y8b7g"]
+[ext_resource type="Script" path="res://Scripts/parallax_scroller.gd" id="7_mc4id"]
+
+[node name="ParallaxArrow" type="ParallaxBackground"]
+offset = Vector2(800, 0)
+transform = Transform2D(1, 0, 0, 1, 800, 0)
+scroll_ignore_camera_zoom = true
+script = ExtResource("7_mc4id")
+direction = 1
+
+[node name="ParallaxArrowLayer" type="ParallaxLayer" parent="."]
+modulate = Color(0.235294, 1, 0.976471, 0.258824)
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="Arrow" type="Sprite2D" parent="ParallaxArrowLayer"]
+position = Vector2(-340, 104)
+scale = Vector2(2, 2.16)
+texture = ExtResource("2_y8b7g")
