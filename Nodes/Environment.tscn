@@ -1,14 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmai1km5sou06"]
+[gd_scene load_steps=10 format=3 uid="uid://dmai1km5sou06"]
 
-[ext_resource type="PackedScene" uid="uid://bysd2roibfb0v" path="res://Nodes/WavesSmall.tscn" id="1_4eikf"]
+[ext_resource type="PackedScene" path="res://Nodes/WavesSmall.tscn" id="1_4eikf"]
+[ext_resource type="PackedScene" uid="uid://bhosrlwysvc33" path="res://Scenes/JumpingFish.tscn" id="1_fljb0"]
 [ext_resource type="PackedScene" uid="uid://cvx30pfjovi3d" path="res://Nodes/Waves.tscn" id="1_xhklj"]
 [ext_resource type="PackedScene" uid="uid://r2l487p53u5w" path="res://Nodes/Beach.tscn" id="2_27243"]
-[ext_resource type="PackedScene" uid="uid://d053qmf0qdfb6" path="res://Nodes/Water.tscn" id="3_4ftcm"]
-[ext_resource type="PackedScene" uid="uid://u1ftfedehlue" path="res://Nodes/Sky.tscn" id="4_wmke3"]
-[ext_resource type="PackedScene" uid="uid://fg1mmw4ng6tl" path="res://Nodes/Arrow.tscn" id="6_jt1sm"]
-[ext_resource type="PackedScene" uid="uid://vpm1n60jqhw2" path="res://Nodes/ArrowLeft.tscn" id="7_720xi"]
+[ext_resource type="PackedScene" path="res://Nodes/Water.tscn" id="3_4ftcm"]
+[ext_resource type="PackedScene" path="res://Nodes/Sky.tscn" id="4_wmke3"]
+[ext_resource type="PackedScene" path="res://Nodes/Arrow.tscn" id="6_jt1sm"]
+[ext_resource type="PackedScene" path="res://Nodes/ArrowLeft.tscn" id="7_720xi"]
+[ext_resource type="Script" path="res://Nodes/Fishes.gd" id="7_bfnnl"]
 
 [node name="Environment" type="Node2D"]
+
+[node name="JumpingFish" parent="." instance=ExtResource("1_fljb0")]
+position = Vector2(1066, 543)
 
 [node name="BackgroundParent" type="Node2D" parent="."]
 
@@ -57,3 +62,6 @@ offset = Vector2(800, -150)
 rotation = -3.14159
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(-0.8, -1.20797e-07, 1.20797e-07, -0.8, 800, -150)
+
+[node name="Fishes" type="Node" parent="."]
+script = ExtResource("7_bfnnl")
