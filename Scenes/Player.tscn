@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bh0u2mqtxrsw7"]
 
-[ext_resource type="Texture2D" uid="uid://bsj25wy4hvg04" path="res://icon.png" id="1_s7gdo"]
 [ext_resource type="Material" uid="uid://b87six5kf5xay" path="res://Scenes/PlayerShaderMaterial.tres" id="1_yqpbr"]
+[ext_resource type="Texture2D" uid="uid://bqty6e3tdbqr4" path="res://Images/Cat/Cat_Sideways_R.png" id="2_y2ew8"]
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -12,4 +12,5 @@ motion_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_yqpbr")
-texture = ExtResource("1_s7gdo")
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_y2ew8")
