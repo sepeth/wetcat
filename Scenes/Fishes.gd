@@ -9,8 +9,6 @@ const padding = 200
 # HACK: parent should set this
 @onready var box_size = get_parent().get_viewport_rect().size
 
-var last_fish = null
-
 
 func _ready():
 	add_child(timer)
@@ -21,12 +19,10 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	if last_fish:
-		remove_child(last_fish)
 	var new_wait = rng.randi_range(3, 6)
 	timer.set_wait_time(new_wait)
-	last_fish = JumpingFishScene.instantiate()
-	last_fish.position.x = rng.randi_range(padding, box_size.x - padding)
-	last_fish.position.y = rng.randi_range(padding, box_size.y - padding)
-	add_child(last_fish)
+	var fish = JumpingFishScene.instantiate()
+	fish.position.x = rng.randi_range(padding, box_size.x - padding)
+	fish.position.y = rng.randi_range(padding, box_size.y - padding)
+	add_child(fish)
 
