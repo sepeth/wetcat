@@ -1,6 +1,6 @@
 extends Node
 
-const JumpingFishScene = preload("res://Scenes/JumpingFish.tscn")
+const JumpingFishScene = preload("res://Scenes/JumpingCarp.tscn")
 const padding = 200
 
 @onready var timer = Timer.new()
@@ -15,7 +15,7 @@ var last_fish = null
 func _ready():
 	add_child(timer)
 	timer.connect("timeout", _on_Timer_timeout)
-	timer.set_wait_time(1.0)
+	timer.set_wait_time(3.0)
 	timer.set_one_shot(false)
 	timer.start()
 
@@ -23,7 +23,7 @@ func _ready():
 func _on_Timer_timeout():
 	if last_fish:
 		remove_child(last_fish)
-	var new_wait = rng.randi_range(1, 4)
+	var new_wait = rng.randi_range(3, 6)
 	timer.set_wait_time(new_wait)
 	last_fish = JumpingFishScene.instantiate()
 	last_fish.position.x = rng.randi_range(padding, box_size.x - padding)

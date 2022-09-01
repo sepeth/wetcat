@@ -5,7 +5,6 @@ extends PathFollow2D
 
 func _ready():
 	$FishSprite.visible = true
-	pass
 
 
 func _physics_process(delta):
