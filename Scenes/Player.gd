@@ -9,5 +9,8 @@ signal ate_fish
 func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		position.x += speed * delta
-	else:
-		position.x -= speed * delta * float_factor_x
+	if Input.is_action_pressed("ui_up"):
+		position.y -= speed / 2 * delta
+	if Input.is_action_pressed("ui_down"):
+		position.y += speed / 2 * delta
+	position.x -= speed * delta * float_factor_x
