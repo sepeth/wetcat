@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dykuqe04eifbp"]
+
+[ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_x032j"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_x032j")
+
+[node name="HungerTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="HungerBar" type="TextureProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+max_value = 15.0
+value = 15.0
+
+[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
