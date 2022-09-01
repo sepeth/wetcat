@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-signal ate_fish
 signal starved
 signal health_changed(health)
 
@@ -36,5 +35,5 @@ func _on_hunger_timer_timeout():
 	health -= 1
 
 
-func _on_player_ate_fish():
+func _on_player_eat_fish():
 	health += 5

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2uqqys36pxca"]
 
-[ext_resource type="Script" path="res://Scenes/CarpPath.gd" id="1_bs3gp"]
+[ext_resource type="Script" path="res://Scenes/JumpingCarp.gd" id="1_x128c"]
 [ext_resource type="Texture2D" uid="uid://di8kb6p86a6qg" path="res://Images/Fish/Blue_Fish_Alive.png" id="2_b20je"]
 
 [sub_resource type="Curve2D" id="Curve2D_00070"]
@@ -10,6 +10,7 @@ _data = {
 point_count = 3
 
 [node name="JumpingCarp" type="Node2D"]
+script = ExtResource("1_x128c")
 
 [node name="Control" type="Control" parent="."]
 clip_children = true
@@ -25,10 +26,17 @@ position = Vector2(824, 612)
 curve = SubResource("Curve2D_00070")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Control/Path2D"]
+unique_name_in_owner = true
 rotation = -1.75977
-script = ExtResource("1_bs3gp")
 
 [node name="FishSprite" type="Sprite2D" parent="Control/Path2D/PathFollow2D"]
 rotation = 3.10669
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_b20je")
+
+[node name="Area2d" type="Area2D" parent="Control/Path2D/PathFollow2D/FishSprite"]
+
+[node name="CollisionPolygon2d" type="CollisionPolygon2D" parent="Control/Path2D/PathFollow2D/FishSprite/Area2d"]
+polygon = PackedVector2Array(-1397.1, 10.079, -723.634, 655.709, 546.025, 124.326, 786.995, 507.384, 1219.49, 769.956, 1170.05, 266.413, 1085.09, -81.1226, 1191.65, -549.144, 1262.7, -861.158, 688.112, -499.702, 425.539, -67.2027, -127.445, -521.304, -439.459, -592.347, -907.48, -698.913, -1290.54, -457.942)
+
+[connection signal="body_entered" from="Control/Path2D/PathFollow2D/FishSprite/Area2d" to="." method="_on_area_2d_body_entered"]

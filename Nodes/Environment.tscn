@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmai1km5sou06"]
+[gd_scene load_steps=8 format=3 uid="uid://dmai1km5sou06"]
 
 [ext_resource type="PackedScene" path="res://Nodes/WavesSmall.tscn" id="1_4eikf"]
 [ext_resource type="PackedScene" uid="uid://cvx30pfjovi3d" path="res://Nodes/Waves.tscn" id="1_xhklj"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" path="res://Nodes/Sky.tscn" id="4_wmke3"]
 [ext_resource type="PackedScene" path="res://Nodes/Arrow.tscn" id="6_jt1sm"]
 [ext_resource type="PackedScene" path="res://Nodes/ArrowLeft.tscn" id="7_720xi"]
-[ext_resource type="Script" path="res://Scenes/Fishes.gd" id="7_bfnnl"]
 
 [node name="Environment" type="Node2D"]
 
@@ -58,6 +57,3 @@ offset = Vector2(800, -150)
 rotation = -3.14159
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(-0.8, -1.20797e-07, 1.20797e-07, -0.8, 800, -150)
-
-[node name="Fishes" type="Node" parent="."]
-script = ExtResource("7_bfnnl")

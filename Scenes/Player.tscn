@@ -5,11 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bqty6e3tdbqr4" path="res://Images/Cat/Cat_Sideways_R.png" id="2_y2ew8"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_g58kn")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-66, 22, 0, 42, 68, 20, 71, -12, 38, -81, 9, -48, -11, -48, -39, -80, -69, -11)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_yqpbr")
@@ -18,5 +16,8 @@ texture = ExtResource("2_y2ew8")
 
 [node name="HungerTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-66, 22, 0, 42, 68, 20, 71, -12, 38, -81, 9, -48, -11, -48, -39, -80, -69, -11)
 
 [connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]

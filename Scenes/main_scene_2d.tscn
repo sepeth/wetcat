@@ -17,5 +17,4 @@ position = Vector2(300, 400)
 offset = Vector2(-50, 50)
 transform = Transform2D(1, 0, 0, 1, -50, 50)
 
-[connection signal="ate_fish" from="Player" to="HUD" method="_on_player_ate_fish"]
 [connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]
