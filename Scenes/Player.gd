@@ -28,9 +28,9 @@ func _ready():
 
 func _process(delta):
 
-	if position.y < top_current_y: 
+	if position.y < get_viewport_rect().size.x: 
 		position.x += current_speed * delta
-	if position.y > bot_current_y: 
+	if position.y > get_viewport_rect().size.y: 
 		position.x -= current_speed * delta
 	if Input.is_action_pressed("ui_right"):
 		position.x += speed * delta
