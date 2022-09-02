@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://lds7s8tdlb8k"]
+
+[ext_resource type="Script" path="res://Scenes/game_over_scene.gd" id="1_aoqih"]
+[ext_resource type="Texture2D" path="res://Images/GameOver.png" id="1_cc7e7"]
+[ext_resource type="Theme" uid="uid://dlcd778dl14xj" path="res://Themes/button_theme.tres" id="3_jm6a7"]
+
+[node name="GameOverScene" type="Node2D"]
+script = ExtResource("1_aoqih")
+
+[node name="GameOverSprite" type="Sprite2D" parent="."]
+position = Vector2(962.75, 403)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_cc7e7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 715.75
+offset_top = 567.0
+offset_right = 1158.75
+offset_bottom = 651.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+offset_right = 443.0
+offset_bottom = 84.0
+theme_override_constants/separation = 50
+
+[node name="RestartButton" type="Button" parent="MarginContainer/HBoxContainer"]
+offset_right = 237.0
+offset_bottom = 84.0
+theme = ExtResource("3_jm6a7")
+text = "  Restart  "
+
+[node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer"]
+offset_left = 287.0
+offset_right = 443.0
+offset_bottom = 84.0
+theme = ExtResource("3_jm6a7")
+text = "  Quit  "
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

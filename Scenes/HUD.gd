@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-signal starved
-
 const bar_red = preload("res://Images/ProgressBar/red.png")
 const bar_green = preload("res://Images/ProgressBar/green.png")
 const bar_orange = preload("res://Images/ProgressBar/orange.png")

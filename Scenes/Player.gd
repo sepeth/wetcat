@@ -21,14 +21,19 @@ var health :
 
 
 func _ready():
+	reset()
+
+
+func reset():
 	health = MAX_HEALTH
+	# Move player to center of screen
+	position = get_viewport_rect().size / 2
 
 
 func _process(delta):
-
-	if position.y < top_current_y: 
+	if position.y < top_current_y:
 		position.x += current_speed * delta
-	if position.y > bot_current_y: 
+	if position.y > bot_current_y:
 		position.x -= current_speed * delta
 	if Input.is_action_pressed("ui_right"):
 		position.x += speed * delta
@@ -37,13 +42,13 @@ func _process(delta):
 	if Input.is_action_pressed("ui_down"):
 		position.y += speed / 2 * delta
 	position.x -= speed * delta * float_factor_x
-	
+
 	# Basic collisions for side of screen
 	if position.x < 0:
 		position.x = 0
 	if position.x > get_viewport_rect().size.x:
 		position.x = get_viewport_rect().size.x
-	
+
 
 func _on_hunger_timer_timeout():
 	health -= 1

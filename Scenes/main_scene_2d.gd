@@ -7,8 +7,6 @@ const JumpingFishScene = preload("res://Scenes/JumpingCarp.tscn")
 
 
 func _ready():
-	# Move player to center of screen
-	$Player.position = get_viewport_rect().size / 2
 	add_child(fish_timer)
 	fish_timer.connect("timeout", _on_Timer_timeout)
 	fish_timer.set_wait_time(3.0)
@@ -30,3 +28,22 @@ func add_fish():
 	fish.position.x = rng.randi_range(padding, box_size.x - padding)
 	fish.position.y = rng.randi_range(padding, box_size.y - padding)
 	add_child(fish)
+
+
+func _on_player_starved():
+	# Game over
+	$GameOverScene.visible = true
+	$Player.visible = false
+	$HUD.visible = false
+
+
+func _on_game_over_scene_quit_pressed():
+	get_tree().quit()
+
+
+func _on_game_over_scene_restart_pressed():
+	$Player.reset()
+	$HUD.visible = true
+	$Player.visible = true
+	$GameOverScene.visible = false
+

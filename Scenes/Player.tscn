@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh0u2mqtxrsw7"]
+[gd_scene load_steps=3 format=3 uid="uid://bh0u2mqtxrsw7"]
 
-[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_g58kn"]
 [ext_resource type="Material" uid="uid://b87six5kf5xay" path="res://Scenes/PlayerShaderMaterial.tres" id="1_yqpbr"]
 [ext_resource type="Texture2D" uid="uid://bqty6e3tdbqr4" path="res://Images/Cat/Cat_Sideways_R.png" id="2_y2ew8"]
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 motion_mode = 1
-script = ExtResource("1_g58kn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_yqpbr")

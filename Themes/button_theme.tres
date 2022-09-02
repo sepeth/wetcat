@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dlcd778dl14xj"]
+
+[ext_resource type="FontFile" uid="uid://dkpbjsajnlc0n" path="res://Fonts/SimpleCat.otf" id="1_pvtpt"]
+
+[resource]
+Button/constants/h_separation = 10
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_pvtpt")
