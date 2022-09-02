@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal starved
 signal health_changed(health)
 
-@export var speed = 250
+@export var speed = 300
 @export var float_factor_x = 0.5
 @export var top_current_y = 250
 @export var bot_current_y = 530

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d053qmf0qdfb6"]
 
-[ext_resource type="Texture2D" uid="uid://dp3ycemdlakh3" path="res://Images/pixel-art-water-background-seamless-sea-texture-backdrop-vector-illustration-223655049.jpg" id="2_y2i8i"]
+[ext_resource type="Texture2D" uid="uid://cwb1t4qe6348j" path="res://Images/water.png" id="2_y0mx5"]
 [ext_resource type="Script" path="res://Scripts/parallax_scroller.gd" id="7_mc4id"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
@@ -10,9 +10,10 @@ scroll_ignore_camera_zoom = true
 script = ExtResource("7_mc4id")
 
 [node name="ParallaxWater" type="ParallaxLayer" parent="."]
+position = Vector2(-1262, 381)
 motion_scale = Vector2(1.5, 1.5)
-motion_mirroring = Vector2(1600, 0)
+motion_mirroring = Vector2(2300, 0)
 
 [node name="Water" type="Sprite2D" parent="ParallaxWater"]
-scale = Vector2(1, 2.16)
-texture = ExtResource("2_y2i8i")
+scale = Vector2(1.15, 1.4)
+texture = ExtResource("2_y0mx5")
