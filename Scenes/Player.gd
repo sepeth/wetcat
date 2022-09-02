@@ -44,10 +44,10 @@ func _process(delta):
 	position.x -= speed * delta * float_factor_x
 
 	# Basic collisions for side of screen
-	if position.x < 0:
-		position.x = 0
-	if position.x > get_viewport_rect().size.x:
-		position.x = get_viewport_rect().size.x
+	var screen_size = get_viewport_rect().size
+	position.x = clamp(position.x, 0, screen_size.x)
+	# HACK: hardcoded paddings
+	position.y = clamp(position.y, 250, screen_size.y - 450)
 
 
 func _on_hunger_timer_timeout():
