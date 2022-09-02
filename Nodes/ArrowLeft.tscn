@@ -5,7 +5,7 @@
 
 [node name="ParallaxArrow" type="ParallaxBackground"]
 offset = Vector2(800, 0)
-rotation = 3.14159
+rotation = -3.14159
 transform = Transform2D(-1, -8.74228e-08, 8.74228e-08, -1, 800, 0)
 scroll_ignore_camera_zoom = true
 script = ExtResource("7_mc4id")

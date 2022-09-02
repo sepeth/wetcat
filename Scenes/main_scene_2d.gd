@@ -9,7 +9,6 @@ const JumpingFishScene = preload("res://Scenes/JumpingCarp.tscn")
 func _ready():
 	# Move player to center of screen
 	$Player.position = get_viewport_rect().size / 2
-
 	add_child(fish_timer)
 	fish_timer.connect("timeout", _on_Timer_timeout)
 	fish_timer.set_wait_time(3.0)
