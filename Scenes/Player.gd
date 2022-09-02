@@ -8,8 +8,6 @@ signal health_changed(health)
 @export var top_current_y = 250
 @export var bot_current_y = 530
 @export var current_speed = 350
-@export var left_edge_collision = 0
-@export var right_edge_collision = 1920
 
 const MAX_HEALTH = 15
 
@@ -28,9 +26,9 @@ func _ready():
 
 func _process(delta):
 
-	if position.y < get_viewport_rect().size.x: 
+	if position.y < top_current_y: 
 		position.x += current_speed * delta
-	if position.y > get_viewport_rect().size.y: 
+	if position.y > bot_current_y: 
 		position.x -= current_speed * delta
 	if Input.is_action_pressed("ui_right"):
 		position.x += speed * delta
@@ -41,10 +39,10 @@ func _process(delta):
 	position.x -= speed * delta * float_factor_x
 	
 	# Basic collisions for side of screen
-	if position.x < left_edge_collision:
-		position.x = left_edge_collision
-	if position.x > right_edge_collision:
-		position.x = right_edge_collision
+	if position.x < 0:
+		position.x = 0
+	if position.x > get_viewport_rect().size.x:
+		position.x = get_viewport_rect().size.x
 	
 
 func _on_hunger_timer_timeout():
