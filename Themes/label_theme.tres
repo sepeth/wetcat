@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://vjr3lyvk7xgq"]
+
+[ext_resource type="FontFile" uid="uid://dkpbjsajnlc0n" path="res://Fonts/SimpleCat.otf" id="1_ns06n"]
+
+[resource]
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_ns06n")
