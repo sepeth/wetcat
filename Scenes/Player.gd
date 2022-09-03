@@ -47,7 +47,7 @@ func _process(delta):
 	var screen_size = get_viewport_rect().size
 	position.x = clamp(position.x, 0, screen_size.x)
 	# HACK: hardcoded paddings
-	position.y = clamp(position.y, 250, screen_size.y - 450)
+	position.y = clamp(position.y, 200, screen_size.y - 450)
 
 
 func _on_hunger_timer_timeout():
