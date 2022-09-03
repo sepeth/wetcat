@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce3row0nx22pn"]
+[gd_scene load_steps=9 format=3 uid="uid://ce3row0nx22pn"]
 
 [ext_resource type="Script" path="res://Scenes/main_scene_2d.gd" id="1_v0ahk"]
 [ext_resource type="PackedScene" uid="uid://bh0u2mqtxrsw7" path="res://Scenes/Player.tscn" id="2_o2xoj"]
+[ext_resource type="Texture2D" uid="uid://cdrisbm0k6tsc" path="res://Images/StartScene.png" id="3_7c6et"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="3_jrcbu"]
+[ext_resource type="Theme" uid="uid://dlcd778dl14xj" path="res://Themes/button_theme.tres" id="4_11t36"]
 [ext_resource type="PackedScene" uid="uid://dmai1km5sou06" path="res://Nodes/Environment.tscn" id="4_r4ejx"]
 [ext_resource type="PackedScene" uid="uid://lds7s8tdlb8k" path="res://Scenes/game_over_scene.tscn" id="5_61bl1"]
 [ext_resource type="PackedScene" uid="uid://dykuqe04eifbp" path="res://Scenes/HUD.tscn" id="5_r5lxq"]
@@ -12,16 +14,35 @@ script = ExtResource("1_v0ahk")
 
 [node name="Environment" parent="." instance=ExtResource("4_r4ejx")]
 
+[node name="StartScene" type="Node2D" parent="."]
+light_mask = 16
+
+[node name="Sprite2d" type="Sprite2D" parent="StartScene"]
+position = Vector2(907, 348)
+texture = ExtResource("3_7c6et")
+
+[node name="StartButton" type="Button" parent="StartScene"]
+offset_left = 731.0
+offset_top = 526.0
+offset_right = 1070.0
+offset_bottom = 645.0
+theme = ExtResource("4_11t36")
+theme_override_font_sizes/font_size = 70
+text = "  Go nuts  "
+
 [node name="Player" parent="." instance=ExtResource("2_o2xoj")]
+visible = false
 position = Vector2(300, 313)
 script = ExtResource("3_jrcbu")
 
 [node name="HUD" parent="." instance=ExtResource("5_r5lxq")]
 layer = 5
+visible = false
 
 [node name="GameOverScene" parent="." instance=ExtResource("5_61bl1")]
 visible = false
 
+[connection signal="pressed" from="StartScene/StartButton" to="." method="start_game"]
 [connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]
 [connection signal="starved" from="Player" to="." method="_on_player_starved"]
 [connection signal="quit_pressed" from="GameOverScene" to="." method="_on_game_over_scene_quit_pressed"]
