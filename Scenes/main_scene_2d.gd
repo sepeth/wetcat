@@ -45,6 +45,7 @@ func start_game():
 	time_alive = 0
 	time_alive_timer.start()
 	$Player.reset()
+	$Player/HungerTimer.start()
 	$Player.visible = true
 	$HUD.visible = true
 	$StartScene.visible = false
@@ -61,6 +62,7 @@ func _on_player_starved():
 	$GameOverScene.visible = true
 	$HUD/Health.visible = false
 	$Player.visible = false
+	$Player/HungerTimer.stop()
 	$Environment/BackgroundParent/ParallaxArrow.visible = false
 	$Environment/BackgroundParent/ArrowLeft.visible = false
 

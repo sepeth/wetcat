@@ -13,7 +13,6 @@ scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_y2ew8")
 
 [node name="HungerTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-66, 22, 0, 42, 68, 20, 71, -12, 38, -81, 9, -48, -11, -48, -39, -80, -69, -11)
