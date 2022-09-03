@@ -9,7 +9,7 @@ signal health_changed(health)
 @export var bot_current_y = 530
 @export var current_speed = 350
 
-const MAX_HEALTH = 30
+const MAX_HEALTH = 20
 
 var health :
 	set(value):
