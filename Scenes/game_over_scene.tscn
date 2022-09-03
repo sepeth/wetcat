@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://lds7s8tdlb8k"]
 
 [ext_resource type="Script" path="res://Scenes/game_over_scene.gd" id="1_aoqih"]
-[ext_resource type="Texture2D" path="res://Images/GameOver.png" id="1_cc7e7"]
+[ext_resource type="Texture2D" uid="uid://chpt5pqqcqqqg" path="res://Images/GameOver.png" id="1_cc7e7"]
 [ext_resource type="Theme" uid="uid://dlcd778dl14xj" path="res://Themes/button_theme.tres" id="3_jm6a7"]
 
 [node name="GameOverScene" type="Node2D"]
