@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://btiuijwmm45xt"]
+[gd_scene load_steps=6 format=3 uid="uid://fsjsc5yoax6t"]
 
 [ext_resource type="Script" path="res://Scripts/NeonTrail.gd" id="1_a5nmf"]
 [ext_resource type="Texture2D" uid="uid://b7aku0ahgr7sc" path="res://Images/trail.png" id="1_ym4hd"]

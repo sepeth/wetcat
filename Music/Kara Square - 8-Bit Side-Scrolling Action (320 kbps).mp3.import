@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhhspjsxbvctr"
+path="res://.godot/imported/Kara Square - 8-Bit Side-Scrolling Action (320 kbps).mp3-75bcdf54230dbc921fdc9946f76f5e2d.mp3str"
+
+[deps]
+
+source_file="res://Music/Kara Square - 8-Bit Side-Scrolling Action (320 kbps).mp3"
+dest_files=["res://.godot/imported/Kara Square - 8-Bit Side-Scrolling Action (320 kbps).mp3-75bcdf54230dbc921fdc9946f76f5e2d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

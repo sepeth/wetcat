@@ -11,8 +11,8 @@ script = ExtResource("7_mc4id")
 
 [node name="ParallaxSkyLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(1.5, 1.5)
-motion_mirroring = Vector2(2000, 0)
+motion_mirroring = Vector2(2400, 0)
 
 [node name="Sky" type="Sprite2D" parent="ParallaxSkyLayer"]
-scale = Vector2(1, 2.16)
+scale = Vector2(1.2, 2.356)
 texture = ExtResource("2_dolec")
