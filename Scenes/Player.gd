@@ -10,10 +10,15 @@ signal health_changed(health)
 @export var current_speed = 350
 
 const MAX_HEALTH = 20
+const REDUCED_MIN_MAX_HEALTH = 10
+
+var current_max_health :
+	set(value):
+		current_max_health = clamp(value, REDUCED_MIN_MAX_HEALTH, MAX_HEALTH)
 
 var health :
 	set(value):
-		health = clamp(value, 0, MAX_HEALTH)
+		health = clamp(value, 0, current_max_health)
 		if health == 0:
 			emit_signal("starved")
 		else:
@@ -25,6 +30,7 @@ func _ready():
 
 
 func reset():
+	current_max_health = MAX_HEALTH
 	health = MAX_HEALTH
 	# Move player to center of screen
 	position = get_viewport_rect().size / 2
@@ -56,4 +62,4 @@ func _on_hunger_timer_timeout():
 
 
 func _on_player_eat_fish():
-	health += 5
+	health += 4

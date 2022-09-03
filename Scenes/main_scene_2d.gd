@@ -4,6 +4,7 @@ const JumpingFishScene = preload("res://Scenes/JumpingCarp.tscn")
 
 @onready var fish_timer = Timer.new()
 @onready var time_alive_timer = Timer.new()
+@onready var difficulty_timer = Timer.new()
 @onready var rng = RandomNumberGenerator.new()
 
 
@@ -36,6 +37,11 @@ func _ready():
 	time_alive_timer.connect("timeout", increase_time_alive)
 	time_alive_timer.set_wait_time(1.0)
 
+	add_child(difficulty_timer)
+	difficulty_timer.set_wait_time(30.0)
+	difficulty_timer.connect("timeout", reduce_max_health)
+
+
 
 func start_game():
 	game_started = true
@@ -44,6 +50,7 @@ func start_game():
 	missed_fish_count = 0
 	time_alive = 0
 	time_alive_timer.start()
+	difficulty_timer.start()
 	$Player.reset()
 	$Player/HungerTimer.start()
 	$Player.visible = true
@@ -95,6 +102,10 @@ func miss_fish():
 	if game_over:
 		return
 	missed_fish_count += 1
+
+
+func reduce_max_health():
+	$Player.current_max_health -= 1
 
 
 func _on_game_over_scene_restart_pressed():
