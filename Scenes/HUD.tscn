@@ -1,54 +1,69 @@
-[gd_scene load_steps=8 format=3 uid="uid://dykuqe04eifbp"]
+[gd_scene load_steps=7 format=3 uid="uid://dykuqe04eifbp"]
 
 [ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_x032j"]
-[ext_resource type="FontFile" uid="uid://dkpbjsajnlc0n" path="res://Fonts/SimpleCat.otf" id="2_5wk7c"]
+[ext_resource type="Theme" uid="uid://vjr3lyvk7xgq" path="res://Themes/label_theme.tres" id="3_mtui3"]
 [ext_resource type="Texture2D" uid="uid://csljilbdviu74" path="res://Images/Icons/Clock.png" id="3_uprf4"]
 [ext_resource type="Texture2D" uid="uid://5rnayl0o6qyw" path="res://Images/Icons/UneatenFish.png" id="4_3tsx0"]
 [ext_resource type="Texture2D" uid="uid://bspq6tqkuc17m" path="res://Images/Icons/EatenFish.png" id="5_tvare"]
 [ext_resource type="Texture2D" uid="uid://efkd01o8oe06" path="res://Images/Icons/Heart.png" id="6_58ing"]
 
-[sub_resource type="Theme" id="Theme_whse6"]
-Label/font_sizes/font_size = 64
-Label/fonts/font = ExtResource("2_5wk7c")
-
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_x032j")
 
-[node name="HungerBar" type="TextureProgressBar" parent="."]
+[node name="ClockIcon" type="Sprite2D" parent="."]
+position = Vector2(394, 59)
+texture = ExtResource("3_uprf4")
+
+[node name="TimeAliveLabel" type="Label" parent="."]
+offset_left = 437.0
+offset_top = 23.0
+offset_right = 558.0
+offset_bottom = 128.0
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("3_mtui3")
+text = "0"
+
+[node name="EatenFishIcon" type="Sprite2D" parent="."]
+position = Vector2(81, 63)
+texture = ExtResource("5_tvare")
+
+[node name="EatenFishLabel" type="Label" parent="."]
+offset_left = 124.0
+offset_top = 23.0
+offset_right = 245.0
+offset_bottom = 128.0
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("3_mtui3")
+text = "0"
+
+[node name="UneatenFishIcon" type="Sprite2D" parent="."]
+position = Vector2(238, 62)
+texture = ExtResource("4_3tsx0")
+
+[node name="UneatenFishLabel" type="Label" parent="."]
+offset_left = 282.0
+offset_top = 23.0
+offset_right = 403.0
+offset_bottom = 128.0
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("3_mtui3")
+text = "0"
+
+[node name="Health" type="Node2D" parent="."]
+
+[node name="HealthIcon" type="Sprite2D" parent="Health"]
+visible = false
+position = Vector2(1519, 71)
+texture = ExtResource("6_58ing")
+
+[node name="HungerBar" type="TextureProgressBar" parent="Health"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -92.0
+offset_left = 1828.0
 offset_top = 53.0
-offset_right = -52.0
+offset_right = 1868.0
 offset_bottom = 93.0
 grow_horizontal = 0
 max_value = 15.0
 value = 15.0
-
-[node name="TimeAliveLabel" type="Label" parent="."]
-offset_left = 117.0
-offset_top = 30.0
-offset_right = 238.0
-offset_bottom = 135.0
-scale = Vector2(0.8, 0.8)
-theme = SubResource("Theme_whse6")
-
-[node name="ClockIcon" type="Sprite2D" parent="."]
-position = Vector2(74, 66)
-texture = ExtResource("3_uprf4")
-
-[node name="UneatenFishIcon" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1253.5, 101)
-texture = ExtResource("4_3tsx0")
-
-[node name="EatenFishIcon" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1156, 112)
-texture = ExtResource("5_tvare")
-
-[node name="HealthIcon" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1352.5, 100)
-texture = ExtResource("6_58ing")

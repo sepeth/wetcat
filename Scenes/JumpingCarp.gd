@@ -1,6 +1,7 @@
 extends Node2D
 
 
+signal got_away
 signal got_caught
 
 
@@ -12,6 +13,7 @@ func _physics_process(delta):
 	# TODO: This should be tween, it looks pretty static.
 	path.progress += jump_speed * delta
 	if path.progress_ratio > 0.99:
+		emit_signal("got_away")
 		queue_free()
 
 
