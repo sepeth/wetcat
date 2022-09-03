@@ -14,8 +14,7 @@ script = ExtResource("1_v0ahk")
 
 [node name="Environment" parent="." instance=ExtResource("4_r4ejx")]
 
-[node name="StartScene" type="Node2D" parent="."]
-light_mask = 16
+[node name="StartScene" type="CanvasLayer" parent="."]
 
 [node name="Sprite2d" type="Sprite2D" parent="StartScene"]
 position = Vector2(907, 348)
