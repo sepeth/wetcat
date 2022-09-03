@@ -48,12 +48,13 @@ offset = Vector2(800, -150)
 transform = Transform2D(1, 0, 0, 1, 800, -150)
 
 [node name="ParallaxArrow" parent="BackgroundParent" instance=ExtResource("6_jt1sm")]
-layer = 4
+visible = false
 offset = Vector2(800, 200)
 scale = Vector2(1, 0.8)
 transform = Transform2D(1, 0, 0, 0.8, 800, 200)
 
 [node name="ArrowLeft" parent="BackgroundParent" instance=ExtResource("7_720xi")]
+visible = false
 offset = Vector2(800, -150)
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(-0.8, -1.20797e-07, 1.20797e-07, -0.8, 800, -150)

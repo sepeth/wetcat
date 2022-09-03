@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chpt5pqqcqqqg" path="res://Images/GameOver.png" id="1_cc7e7"]
 [ext_resource type="Theme" uid="uid://dlcd778dl14xj" path="res://Themes/button_theme.tres" id="3_jm6a7"]
 
-[node name="GameOverScene" type="Node2D"]
+[node name="GameOverScene" type="CanvasLayer"]
 script = ExtResource("1_aoqih")
 
 [node name="GameOverSprite" type="Sprite2D" parent="."]
@@ -19,17 +19,20 @@ offset_right = 1158.75
 offset_bottom = 651.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 offset_right = 443.0
 offset_bottom = 84.0
 theme_override_constants/separation = 50
 
 [node name="RestartButton" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
 offset_right = 237.0
 offset_bottom = 84.0
 theme = ExtResource("3_jm6a7")
 text = "  Restart  "
 
 [node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
 offset_left = 287.0
 offset_right = 443.0
 offset_bottom = 84.0
