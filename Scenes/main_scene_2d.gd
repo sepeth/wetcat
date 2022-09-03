@@ -8,7 +8,6 @@ const JumpingFishScene = preload("res://Scenes/JumpingCarp.tscn")
 @onready var rng = RandomNumberGenerator.new()
 
 
-var game_started = false
 var game_over = false
 
 var time_alive = 0 :
@@ -44,7 +43,6 @@ func _ready():
 
 
 func start_game():
-	game_started = true
 	game_over = false
 	eaten_fish_count = 0
 	missed_fish_count = 0
@@ -65,7 +63,6 @@ func start_game():
 
 func _on_player_starved():
 	game_over = true
-	game_started = false
 	$GameOverScene.visible = true
 	$HUD/Health.visible = false
 	$Player.visible = false
@@ -94,6 +91,8 @@ func add_fish():
 
 
 func eat_fish():
+	if game_over:
+		return
 	eaten_fish_count += 1
 	$Player._on_player_eat_fish()
 

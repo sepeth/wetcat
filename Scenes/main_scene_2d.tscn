@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="3_jrcbu"]
 [ext_resource type="Theme" uid="uid://dlcd778dl14xj" path="res://Themes/button_theme.tres" id="4_11t36"]
 [ext_resource type="PackedScene" uid="uid://dmai1km5sou06" path="res://Nodes/Environment.tscn" id="4_r4ejx"]
-[ext_resource type="PackedScene" path="res://Scenes/game_over_scene.tscn" id="5_61bl1"]
+[ext_resource type="PackedScene" uid="uid://lds7s8tdlb8k" path="res://Scenes/game_over_scene.tscn" id="5_61bl1"]
 [ext_resource type="PackedScene" uid="uid://dykuqe04eifbp" path="res://Scenes/HUD.tscn" id="5_r5lxq"]
 
 [node name="MainScene2D" type="Node2D"]
