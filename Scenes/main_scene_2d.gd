@@ -3,7 +3,10 @@ extends Node2D
 const JumpingFishScene = preload("res://Scenes/JumpingCarp.tscn")
 
 @onready var fish_timer = Timer.new()
+@onready var time_alive_timer = Timer.new()
 @onready var rng = RandomNumberGenerator.new()
+
+var time_alive = 0
 
 
 func _ready():
@@ -13,6 +16,20 @@ func _ready():
 	fish_timer.start()
 
 
+	add_child(time_alive_timer)
+	time_alive_timer.connect("timeout", increase_time_alive)
+	time_alive_timer.set_wait_time(1.0)
+	start_game()
+
+
+func start_game():
+	time_alive = 0
+	time_alive_timer.start()
+
+
+func increase_time_alive():
+	time_alive += 1
+	$HUD/TimeAliveLabel.text = "%d" % time_alive
 
 
 func add_fish():
@@ -44,3 +61,6 @@ func _on_game_over_scene_restart_pressed():
 	$Player.visible = true
 	$GameOverScene.visible = false
 
+
+func _physics_process(delta):
+	pass
