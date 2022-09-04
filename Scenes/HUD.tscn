@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dykuqe04eifbp"]
 
 [ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_x032j"]
-[ext_resource type="Theme" uid="uid://vjr3lyvk7xgq" path="res://Themes/label_theme.tres" id="3_mtui3"]
+[ext_resource type="Theme" path="res://Themes/label_theme.tres" id="3_mtui3"]
 [ext_resource type="Texture2D" uid="uid://csljilbdviu74" path="res://Images/Icons/Clock.png" id="3_uprf4"]
 [ext_resource type="Texture2D" uid="uid://5rnayl0o6qyw" path="res://Images/Icons/UneatenFish.png" id="4_3tsx0"]
 [ext_resource type="Texture2D" uid="uid://bspq6tqkuc17m" path="res://Images/Icons/EatenFish.png" id="5_tvare"]

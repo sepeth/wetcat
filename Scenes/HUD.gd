@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-const bar_red = preload("res://Images/ProgressBar/red.png")
-const bar_green = preload("res://Images/ProgressBar/green.png")
-const bar_orange = preload("res://Images/ProgressBar/orange.png")
+var bar_red = load("res://Images/ProgressBar/red.png")
+var bar_green = load("res://Images/ProgressBar/green.png")
+var bar_orange = load("res://Images/ProgressBar/orange.png")
 
 
 func update_healthbar(value):
