@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cvx30pfjovi3d" path="res://Nodes/Waves.tscn" id="1_xhklj"]
 [ext_resource type="PackedScene" uid="uid://r2l487p53u5w" path="res://Nodes/Beach.tscn" id="2_27243"]
 [ext_resource type="PackedScene" uid="uid://d053qmf0qdfb6" path="res://Nodes/Water.tscn" id="3_4ftcm"]
-[ext_resource type="PackedScene" path="res://Nodes/Sky.tscn" id="4_wmke3"]
+[ext_resource type="PackedScene" uid="uid://u1ftfedehlue" path="res://Nodes/Sky.tscn" id="4_wmke3"]
 [ext_resource type="PackedScene" uid="uid://fg1mmw4ng6tl" path="res://Nodes/Arrow.tscn" id="6_jt1sm"]
 [ext_resource type="PackedScene" uid="uid://vpm1n60jqhw2" path="res://Nodes/ArrowLeft.tscn" id="7_720xi"]
 [ext_resource type="AudioStream" uid="uid://dhhspjsxbvctr" path="res://Music/Kara Square - 8-Bit Side-Scrolling Action (320 kbps).mp3" id="8_a0v4v"]

@@ -63,3 +63,4 @@ func _on_hunger_timer_timeout():
 
 func _on_player_eat_fish():
 	health += 4
+	$CatchFishSound.play()
