@@ -1,2 +1,2 @@
-# watcat
+# wetcat
 Cat that is wet
