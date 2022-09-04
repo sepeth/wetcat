@@ -7,7 +7,7 @@ const JumpingFishScene = preload("res://Scenes/JumpingCarp.tscn")
 @onready var difficulty_timer = Timer.new()
 @onready var rng = RandomNumberGenerator.new()
 
-
+var game_started = false
 var game_over = false
 
 var time_alive = 0 :
@@ -43,6 +43,7 @@ func _ready():
 
 
 func start_game():
+	game_started = true
 	game_over = false
 	eaten_fish_count = 0
 	missed_fish_count = 0
@@ -91,7 +92,7 @@ func add_fish():
 
 
 func eat_fish():
-	if game_over:
+	if game_over or not game_started:
 		return
 	eaten_fish_count += 1
 	$Player._on_player_eat_fish()

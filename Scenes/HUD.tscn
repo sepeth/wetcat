@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dykuqe04eifbp"]
+[gd_scene load_steps=8 format=3 uid="uid://dykuqe04eifbp"]
 
 [ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_x032j"]
-[ext_resource type="Theme" path="res://Themes/label_theme.tres" id="3_mtui3"]
+[ext_resource type="Theme" uid="uid://vjr3lyvk7xgq" path="res://Themes/label_theme.tres" id="3_mtui3"]
 [ext_resource type="Texture2D" uid="uid://csljilbdviu74" path="res://Images/Icons/Clock.png" id="3_uprf4"]
 [ext_resource type="Texture2D" uid="uid://5rnayl0o6qyw" path="res://Images/Icons/UneatenFish.png" id="4_3tsx0"]
 [ext_resource type="Texture2D" uid="uid://bspq6tqkuc17m" path="res://Images/Icons/EatenFish.png" id="5_tvare"]
 [ext_resource type="Texture2D" uid="uid://efkd01o8oe06" path="res://Images/Icons/Heart.png" id="6_58ing"]
+[ext_resource type="Theme" uid="uid://ctycgubdrsg6w" path="res://Themes/health_bar_theme.tres" id="7_vp6uu"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_x032j")
@@ -52,18 +53,16 @@ text = "0"
 [node name="Health" type="Node2D" parent="."]
 
 [node name="HealthIcon" type="Sprite2D" parent="Health"]
-visible = false
-position = Vector2(1519, 71)
+position = Vector2(1612, 61)
 texture = ExtResource("6_58ing")
 
-[node name="HungerBar" type="TextureProgressBar" parent="Health"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 1828.0
-offset_top = 53.0
-offset_right = 1868.0
-offset_bottom = 93.0
-grow_horizontal = 0
-max_value = 15.0
-value = 15.0
+[node name="HealthBar" type="ProgressBar" parent="Health"]
+offset_left = 1658.0
+offset_top = 48.0
+offset_right = 1872.0
+offset_bottom = 78.0
+theme = ExtResource("7_vp6uu")
+max_value = 20.0
+step = 1.0
+value = 10.0
+percent_visible = false
