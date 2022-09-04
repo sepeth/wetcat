@@ -81,7 +81,8 @@ func add_fish():
 	var padding = 200
 	var box_size = get_viewport_rect().size
 	var new_wait = rng.randi_range(0, 3)
-	fish_timer.set_wait_time(new_wait)
+	# set_wait_time requires a value greater than 0
+	fish_timer.set_wait_time(new_wait + 0.1)
 	var fish = JumpingFishScene.instantiate()
 	fish.got_caught.connect(eat_fish)
 	fish.got_away.connect(miss_fish)
